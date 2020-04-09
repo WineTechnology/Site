@@ -90,16 +90,16 @@
       function drawChart1() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',    11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          ['Tipo', 'Porcentagem'],
+          ['Tinto Seco',    30],
+          ['Tinto de guarda',      25],
+          ['Branco seco',  20],
+          ['Espumante', 15],
+          ['Do porto',    10]
         ]);
 
         var options = {
-          title: 'My Daily Activities'
+          title: 'Consumo de Vinhos'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
@@ -124,25 +124,25 @@ function drawChart() {
   data.addColumn('string', 'Topping');
   data.addColumn('number', 'Slices');
   data.addRows([
-    ['Mushrooms', 3],
-    ['Onions', 1],
-    ['Olives', 1],
-    ['Zucchini', 1],
-    ['Pepperoni', 2]
+    ['Maio', 3],
+    ['Abril', 2],
+    ['Março', 2],
+    ['Fevereiro', 1],
+    ['Janeiro', 1]
   ]);
 
-  var piechart_options = {title:'Pie Chart: How Much Pizza I Ate Last Night',
+  var piechart_options = {title:'Pie Chart: Consumo de Vinho tinto no ano',
                  width:300,
                  height:200};
   var piechart = new google.visualization.PieChart(document.getElementById('piechart_div'));
   piechart.draw(data, piechart_options);
 
-  var barchart_options = {title:'Barchart: How Much Pizza I Ate Last Night',
+  var barchart_options = {title:'Barchart: Desperdício Evitado (em mil reais R$)',
                  width:300,
                  height:200,
                  legend: 'none'};
   var barchart = new google.visualization.BarChart(document.getElementById('barchart_div'));
-  barchart.draw(data, barchart_options);  
+  barchart.draw(data, barchart_options);    
 }
   
 
@@ -155,23 +155,23 @@ google.charts.load('current', {'packages':['corechart']});
       function drawVisualization() {
         // Some raw data (not necessarily accurate)
         var data = google.visualization.arrayToDataTable([
-          ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
-          ['2004/05',  165,      938,         522,             998,           450,      614.6],
-          ['2005/06',  135,      1120,        599,             1268,          288,      682],
-          ['2006/07',  157,      1167,        587,             807,           397,      623],
-          ['2007/08',  139,      1110,        615,             968,           215,      609.4],
-          ['2008/09',  136,      691,         629,             1026,          366,      569.6]
+          ['Month', 'Estabelecimento 1', 'Estabelecimento 2', 'Estabalecimento 3'],
+          ['2019/05',  100,      120,         113,],
+          ['2019/06',  82,      102,        95,],
+          ['2019/07',  68,      88,        72,],
+          ['2019/08',  50,      66,        60,],
+          ['2019/09',  43,      52,         47,]
         ]);
 
         var options = {
-          title : 'Monthly Coffee Production by Country',
-          vAxis: {title: 'Cups'},
-          hAxis: {title: 'Month'},
+          title : 'Medições Fora do Padrão',
+          vAxis: {title: 'Medições/dia'},
+          hAxis: {title: 'Mês'},
           seriesType: 'bars',
           series: {5: {type: 'line'}}        };
 
         var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
-         chart.draw(data, options); 
+         chart.draw(data, options);  
          
 }
 //--------------------------------------------------------------
@@ -181,32 +181,32 @@ google.charts.load('current', {'packages':['line']});
     function drawChart3() {
 
       var data = new google.visualization.DataTable();
-      data.addColumn('number', 'Day');
-      data.addColumn('number', 'Guardians of the Galaxy');
-      data.addColumn('number', 'The Avengers');
-      data.addColumn('number', 'Transformers: Age of Extinction');
+      data.addColumn('number', 'Dia');
+      data.addColumn('number', 'Vinhos tintos de guarda');
+      data.addColumn('number', 'Vinhos Brancos');
+      data.addColumn('number', 'Espumantes');
 
       data.addRows([
-        [1,  37.8, 80.8, 41.8],
-        [2,  30.9, 69.5, 32.4],
-        [3,  25.4,   57, 25.7],
-        [4,  11.7, 18.8, 10.5],
-        [5,  11.9, 17.6, 10.4],
-        [6,   8.8, 13.6,  7.7],
-        [7,   7.6, 12.3,  9.6],
-        [8,  12.3, 29.2, 10.6],
-        [9,  16.9, 42.9, 14.8],
-        [10, 12.8, 30.9, 11.6],
-        [11,  5.3,  7.9,  4.7],
-        [12,  6.6,  8.4,  5.2],
-        [13,  4.8,  6.3,  3.6],
-        [14,  4.2,  6.2,  3.4]
+        [1,  12, 8, 8],
+        [2,  13, 8, 7],
+        [3,  13,   8, 6],
+        [4,  12, 7, 6],
+        [5,  11, 6, 5],
+        [6,  12, 7,  6],
+        [7,  12, 7,  6],
+        [8,  13, 8, 8],
+        [9,  13, 8, 9],
+        [10, 14, 9, 10],
+        [11,  15,  10,  11],
+        [12,  13,  9,  8],
+        [13,  12,  8,  7],
+        [14,  12,  7,  7]
       ]);
 
       var options = {
         chart: {
-          title: 'Box Office Earnings in First Two Weeks of Opening',
-          subtitle: 'in millions of dollars (USD)'
+          title: 'Medição de temperatura ',
+          subtitle: '(em gaus Celcius)'
         },
         
       };
@@ -257,13 +257,13 @@ google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart6);
 function drawChart6() {
   var data = google.visualization.arrayToDataTable([
-    ['Diameter', 'Age'],
+    ['Tempo', 'Lucros'],
     [8, 37], [4, 19.5], [11, 52], [4, 22], [3, 16.5], [6.5, 32.8], [14, 72]]);
 
   var options = {
-    title: 'Age of sugar maples vs. trunk diameter, in inches',
-    hAxis: {title: 'Diameter'},
-    vAxis: {title: 'Age'},
+    title: 'Lucros vs. Tempo, em R$',
+    hAxis: {title: 'Tempo'},
+    vAxis: {title: 'Lucros'},
     legend: 'none',
     trendlines: { 0: {} }    // Draw a trendline for data series 0.
   };
