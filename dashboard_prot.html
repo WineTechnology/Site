@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Chamando a API do Google Charts-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!--Linkando o arquivo de CSS-->
+    <link rel="stylesheet" href="style.css">
+
+    <script defer src="/your-path-to-fontawesome/js/all.js"></script> 
+
+    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WineTech - página inicial</title>
+</head>
+<body>
+    <div class="div_menu_lateral">
+      <header>
+          <img src="logo_winetech.png" alt="Logo WineTech" id="img_menu_lateral_logo">
+      </header>
+            <ul>
+                <li><a href="#">Página Inicial</a></li>
+                <li><a href="#">Seu Perfil</a></li>
+                <li><a href="#">Configurações</a></li>
+                <li><a href="#">Sobre</a></li>
+            </ul>
+        
+    </div>
+    <main>
+      <div class="dados">
+        <h1>DashBoard</h1>
+        <h3>Dados do cliente:</h3>
+        <br><br>
+        <table class="tb_dados">
+            <tr>
+             <th>ID Cliente: </th>
+             <th>Razão Social:</th>
+             <th>CNPJ:</th>
+             <th>Endereço:</th>
+             <th>Representante:</th>
+            </tr>
+            <tr>
+              <td>002012</td>
+              <td><b> E-Vino Comércio de Vinhos S.A.</b> </td>
+              <td>05.089.637/0001-10</td>
+              <td>Rua Bela Cintra, 986, Bento Gonçalves, RS</td>
+              <td>Renato Junior</td>
+            </tr>
+        </table>
+      </div>
+      <div class="graficos">
+        <div class="graficos1_2_3_4">   
+          <table class="columns">
+            <tr>
+              <td><div id="piechart1" class="graficos_quadrados"></div></td>
+              <td><div id="piechart_div" class="graficos_quadrados"></div></td>
+              <td><div id="barchart_div" class="graficos_quadrados"></div></td>
+            </tr>
+          </table>
+        </div>      
+        <div class="graficos5_6">
+          <table class="columns">
+            <tr>
+              <td><div id="chart_div" class="graficos_full"></div></td>
+              <td><div id="linechart_material" class="graficos_full"></div></td>
+            </tr>
+          </table>
+        </div>
+        <div class="graficos7_8">
+          <table class="columns">
+            <tr>
+              <td><div id="chart_lines" class="graficos_full"></div></td>
+              <td><div id="chart_div6" class="graficos_full"></div></td>
+            </tr>
+          </table>
+        </div>
+      </div>-->
+    </main>
+    <footer> </footer>
+
+
+</body>
+</html>
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart1);
+
+      function drawChart1() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',    11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
+
+        chart.draw(data, options);
+    
+    // Load Charts and the corechart and barchart packages.
+   // google.charts.load('current', {'packages':['corechart']});
+
+    // Draw the pie chart and bar chart when Charts is loaded.
+    //google.charts.setOnLoadCallback(drawChart);
+    }
+
+ //---------------------------
+
+ google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Topping');
+  data.addColumn('number', 'Slices');
+  data.addRows([
+    ['Mushrooms', 3],
+    ['Onions', 1],
+    ['Olives', 1],
+    ['Zucchini', 1],
+    ['Pepperoni', 2]
+  ]);
+
+  var piechart_options = {title:'Pie Chart: How Much Pizza I Ate Last Night',
+                 width:300,
+                 height:200};
+  var piechart = new google.visualization.PieChart(document.getElementById('piechart_div'));
+  piechart.draw(data, piechart_options);
+
+  var barchart_options = {title:'Barchart: How Much Pizza I Ate Last Night',
+                 width:300,
+                 height:200,
+                 legend: 'none'};
+  var barchart = new google.visualization.BarChart(document.getElementById('barchart_div'));
+  barchart.draw(data, barchart_options);  
+}
+  
+
+
+//-----------------------------------------------
+
+google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawVisualization);
+    
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
+          ['2004/05',  165,      938,         522,             998,           450,      614.6],
+          ['2005/06',  135,      1120,        599,             1268,          288,      682],
+          ['2006/07',  157,      1167,        587,             807,           397,      623],
+          ['2007/08',  139,      1110,        615,             968,           215,      609.4],
+          ['2008/09',  136,      691,         629,             1026,          366,      569.6]
+        ]);
+
+        var options = {
+          title : 'Monthly Coffee Production by Country',
+          vAxis: {title: 'Cups'},
+          hAxis: {title: 'Month'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+         chart.draw(data, options); 
+         
+}
+//--------------------------------------------------------------
+google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart3);
+
+    function drawChart3() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Day');
+      data.addColumn('number', 'Guardians of the Galaxy');
+      data.addColumn('number', 'The Avengers');
+      data.addColumn('number', 'Transformers: Age of Extinction');
+
+      data.addRows([
+        [1,  37.8, 80.8, 41.8],
+        [2,  30.9, 69.5, 32.4],
+        [3,  25.4,   57, 25.7],
+        [4,  11.7, 18.8, 10.5],
+        [5,  11.9, 17.6, 10.4],
+        [6,   8.8, 13.6,  7.7],
+        [7,   7.6, 12.3,  9.6],
+        [8,  12.3, 29.2, 10.6],
+        [9,  16.9, 42.9, 14.8],
+        [10, 12.8, 30.9, 11.6],
+        [11,  5.3,  7.9,  4.7],
+        [12,  6.6,  8.4,  5.2],
+        [13,  4.8,  6.3,  3.6],
+        [14,  4.2,  6.2,  3.4]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Box Office Earnings in First Two Weeks of Opening',
+          subtitle: 'in millions of dollars (USD)'
+        },
+        
+      };
+
+      var chart = new google.charts.Line(document.getElementById('linechart_material'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+//---------------------------------------------------------------
+
+google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart5);
+
+      function drawChart5() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'x');
+        data.addColumn('number', 'values');
+        data.addColumn({id:'i0', type:'number', role:'interval'});
+        data.addColumn({id:'i1', type:'number', role:'interval'});
+        data.addColumn({id:'i2', type:'number', role:'interval'});
+        data.addColumn({id:'i2', type:'number', role:'interval'});
+        data.addColumn({id:'i2', type:'number', role:'interval'});
+        data.addColumn({id:'i2', type:'number', role:'interval'});
+  
+        data.addRows([
+            [1, 100, 90, 110, 85, 96, 104, 120],
+            [2, 120, 95, 130, 90, 113, 124, 140],
+            [3, 130, 105, 140, 100, 117, 133, 139],
+            [4, 90, 85, 95, 85, 88, 92, 95],
+            [5, 70, 74, 63, 67, 69, 70, 72],
+            [6, 30, 39, 22, 21, 28, 34, 40],
+            [7, 80, 77, 83, 70, 77, 85, 90],
+            [8, 100, 90, 110, 85, 95, 102, 110]]);
+  
+        // The intervals data as narrow lines (useful for showing raw source data)
+        var options_lines = {
+            title: 'Line intervals, default',
+            curveType: 'function',
+            lineWidth: 4,
+            intervals: { 'style':'line' },
+            legend: 'none'
+        };
+  
+        var chart_lines = new google.visualization.LineChart(document.getElementById('chart_lines'));
+        chart_lines.draw(data, options_lines);
+      }
+      //-----------------------------------------------------
+      google.charts.setOnLoadCallback(drawChart6);
+function drawChart6() {
+  var data = google.visualization.arrayToDataTable([
+    ['Diameter', 'Age'],
+    [8, 37], [4, 19.5], [11, 52], [4, 22], [3, 16.5], [6.5, 32.8], [14, 72]]);
+
+  var options = {
+    title: 'Age of sugar maples vs. trunk diameter, in inches',
+    hAxis: {title: 'Diameter'},
+    vAxis: {title: 'Age'},
+    legend: 'none',
+    trendlines: { 0: {} }    // Draw a trendline for data series 0.
+  };
+
+  var chart = new google.visualization.ScatterChart(document.getElementById('chart_div6'));
+  chart.draw(data, options);
+}
+      //--------------------
+
+
+</script>
