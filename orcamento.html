@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winetec</title>
+
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+
+<script type="text/javascript" src="scripts/calculo_orcamento.js"></script>
+
+<body>
+    <header>
+        <div class="container">
+            <!-- <div class="logo">
+                <img src="imagens/logo_winetec_cortado.jpeg" alt="logo">
+            </div> -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="">Gráficos</a></li>
+                    <li><a href="login.html">Login/Cadastro</a></li>
+                    <li class="ativo"><a href="orcamento.html">Orçamento</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+                <nav>
+        </div>
+    </header>
+    <article>
+
+        <div class="container">
+            <div class="titulo">Simule seu orçamento aqui!</div>
+            <table>
+                <tr>
+                    <td>
+                        <div class="caixaimg">
+                            <img src="imagens/vinho.png" alt="">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="caixa2">
+                            Quanto custa o seu estoque?<br><br>
+                            <input required placeholder="R$"  id="ganhos"><br><br><br>
+                            Tamanho do seu armazém ou adega <br><br>
+                            <input required placeholder="m²" id="armazenamento"><br><br><br>
+                            <button class="btn" ; onclick="calcular()">Calcular</button><br><br>
+                            <div id="div_vinho" class="resposta"></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </article>
+    <footer>
+        <div class="container">
+            <span class="copy">Copyright 2020 Winetec</span>
+        </div>
+    </footer>
+</body>
+
+</html>
