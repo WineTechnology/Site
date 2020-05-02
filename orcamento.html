@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Winetec</title>
+    <title>Winetec - Orçamento</title>
 
     <link rel="stylesheet" href="estilos/style.css">
 </head>
@@ -14,17 +14,17 @@
 <body>
     <header>
         <div class="container">
-            <!-- <div class="logo">
+            <div class="logo">
                 <img src="imagens/logo_winetec_cortado.jpeg" alt="logo">
-            </div> -->
+            </div>
             <nav>
                 <ul>
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="">Gráficos</a></li>
-                    <li><a href="login.html">Login/Cadastro</a></li>
-                    <li class="ativo"><a href="orcamento.html">Orçamento</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li class="ativo"><a href="orcamento.html">Orçamento</a></li>
+                    <li><a href="login.html">Login | Cadastro</a></li>
+                    <li><a href="">Gráficos</a></li>
                 </ul>
                 <nav>
         </div>
@@ -43,10 +43,10 @@
                     <td>
                         <div class="caixa2">
                             Quanto custa o seu estoque?<br><br>
-                            <input required placeholder="R$"  id="ganhos"><br><br><br>
+                            <input required placeholder="R$" id="ganhos"><br><br><br>
                             Tamanho do seu armazém ou adega <br><br>
                             <input required placeholder="m²" id="armazenamento"><br><br><br>
-                            <button class="btn" ; onclick="calcular()">Calcular</button><br><br>
+                            <button class="btn"; onclick="calcular()">Calcular</button><br><br>
                             <div id="div_vinho" class="resposta"></div>
                         </div>
                     </td>
@@ -56,10 +56,9 @@
 
     </article>
     <footer>
-        <div class="container">
-            <span class="copy">Copyright 2020 Winetec</span>
+        <div class="footer">
+            <p>Copyright 2020 Winetec</p>
         </div>
     </footer>
 </body>
-
 </html>
