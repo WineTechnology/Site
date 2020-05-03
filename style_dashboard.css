@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.menu{
+    height: 100vh;
+    float: left;
+    width: 13%;
+    background-color:#260f0a;
+    border-right: 3px solid #7f0404;
+}
+.topicosMenu{
+    margin-top: 20%;
+    text-align: center;
+}
+.menuli{
+    font-family: 'Heebo', sans-serif;
+    color: #997c75;
+    list-style: none;
+    padding: 10%;
+    margin-top: 10%;
+}
+.logo{
+    width: 150px;
+
+}
+.sessao{
+    width:60%;
+    margin-left: 25%;
+    margin-top: 10%;
+}
+.titulo{
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+text-align: center;
+}
+.subtitulo{
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+text-align: center;
+}
+a{
+    text-decoration: none;
+}
+.menuli:hover{
+    text-decoration: underline;
+}
+h2{
+    opacity: 0;
+}
